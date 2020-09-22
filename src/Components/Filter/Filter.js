@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./filter.module.css";
 import { connect } from "react-redux";
-import contactsActions from "../../Redux/Actions/contactActions";
-import contactsSelectors from "../../Redux/Selectors/contactSelectors";
+import contactsActions from "../../Redux/contacts/contacts-actions";
+import contactsSelectors from "../../Redux/contacts/contacts-selectors";
 
 const Filter = ({ onChangeFilter, value }) => (
   <div className={styles.container}>

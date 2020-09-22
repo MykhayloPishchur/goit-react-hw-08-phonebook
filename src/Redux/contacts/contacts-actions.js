@@ -26,3 +26,16 @@ export default {
   deleteContactError,
   filterByNames,
 };
+
+// export default {
+//   addContactRequest,
+//   addContactSuccess,
+//   addContactError,
+//   fetchContactsRequest,
+//   fetchContactsSuccess,
+//   fetchContactsError,
+//   deleteContactRequest,
+//   deleteContactSuccess,
+//   deleteContactError,
+//   filterByNames,
+// };

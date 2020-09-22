@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import styles from "./contactlist.module.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { connect } from "react-redux";
-import contactsOperations from "../../Redux/Operations/contactOperation";
-import contactsSelectors from "../../Redux/Selectors/contactSelectors";
+import contactsOperations from "../../Redux/contacts/contacts-operations";
+import contactsSelectors from "../../Redux/contacts/contacts-selectors";
 import PropTypes from "prop-types";
 
 class ContactList extends Component {

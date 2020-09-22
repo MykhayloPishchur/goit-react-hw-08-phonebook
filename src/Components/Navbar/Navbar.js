@@ -10,7 +10,7 @@ const Navbar = () => {
         <h3>
           <NavLink
             exact
-            to={routes.home}
+            to={routes.HOME.path}
             className={styles.navLink}
             activeClassName={styles.active}
           >
@@ -23,7 +23,7 @@ const Navbar = () => {
         <ul>
           <li className={styles.Item}>
             <NavLink
-              to={routes.login}
+              to={routes.LOGIN.path}
               className={styles.navLink}
               activeClassName={styles.active}
             >
@@ -33,7 +33,7 @@ const Navbar = () => {
 
           <li>
             <NavLink
-              to={routes.register}
+              to={routes.REGISTER.path}
               className={styles.navLink}
               activeClassName={styles.active}
             >

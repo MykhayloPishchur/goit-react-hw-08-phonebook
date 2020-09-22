@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./contactform.module.css";
-import contactsOperations from "../../Redux/Operations/contactOperation";
-import contactsSelectors from "../../Redux/Selectors/contactSelectors";
+import contactsOperations from "../../Redux/contacts/contacts-operations";
+import contactsSelectors from "../../Redux/contacts/contacts-selectors";
 import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 import InputMask from "react-input-mask";
