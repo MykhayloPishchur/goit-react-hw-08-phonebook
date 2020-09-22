@@ -38,6 +38,7 @@ class ContactsView extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  contacts: contactsSelectors.getContacts(state),
   isLoading: contactsSelectors.getLoading(state),
 });
 

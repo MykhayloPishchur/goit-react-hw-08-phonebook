@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-import authSelectors from "../Redux/auth/auth-selectors";
+import { authSelectors } from "../Redux/auth";
 
 const PrivateRoute = ({
   component: Component,

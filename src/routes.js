@@ -1,24 +1,40 @@
-import HomePage from "./Pages/HomePage/HomePage";
-import LoginPage from "./Pages/LoginPage/LoginPage";
-import RegisterPage from "./Pages/RegisterPage/RegisterPage";
-import ContactPage from "./Pages/ContactPage/ContactPage";
+// import HomePage from "./Pages/HomePage/HomePage";
+// import LoginPage from "./Pages/LoginPage/LoginPage";
+// import RegisterPage from "./Pages/RegisterPage/RegisterPage";
+// import ContactPage from "./Pages/ContactPage/ContactPage";
+import { lazy } from "react";
 
-export default {
-  HOME: {
+export default [
+  {
     path: "/",
+    label: "Home",
     exact: true,
-    component: HomePage,
+    component: lazy(() => import("./Pages/HomePage/HomePage")),
+    private: false,
+    restricted: false,
   },
-  REGISTER: {
+  {
     path: "/register",
-    component: LoginPage,
+    label: "Register",
+    exact: true,
+    component: lazy(() => import("./Pages/RegisterPage/RegisterPage")),
+    private: false,
+    restricted: true,
   },
-  LOGIN: {
+  {
     path: "/login",
-    component: RegisterPage,
+    label: "Login",
+    exact: true,
+    component: lazy(() => import("./Pages/LoginPage/LoginPage")),
+    private: false,
+    restricted: true,
   },
-  CONTACTS: {
-    path: "/tasks",
-    component: ContactPage,
+  {
+    path: "/contacts",
+    label: "TContacts",
+    exact: true,
+    component: lazy(() => import("./Pages/ContactPage/ContactPage")),
+    private: true,
+    restricted: false,
   },
-};
+];
