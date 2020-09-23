@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import styles from "./contactlist.module.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { connect } from "react-redux";
-import contactsOperations from "../../Redux/contacts/contacts-operations";
-import contactsSelectors from "../../Redux/contacts/contacts-selectors";
+import { contactsOperations, contactsSelectors } from "../../Redux/contacts";
+import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 class ContactList extends Component {
@@ -21,16 +21,18 @@ class ContactList extends Component {
           <CSSTransition key={item.id} timeout={250} classNames={styles}>
             <li>
               <div className={styles.wrapper}>
-                <span className={styles.telName}>{item.name}</span>
-                <span className={styles.telNumber}>{item.number}</span>
+                <div className={styles.container}>
+                  <span className={styles.telName}>{item.name}</span>
+                  <span className={styles.telNumber}>{item.number}</span>
 
-                <button
-                  className={styles.closeBtn}
-                  id={item.id}
-                  onClick={this.handleDeleteContact(item.id)}
-                >
-                  &times;
-                </button>
+                  <Button
+                    id={item.id}
+                    onClick={this.handleDeleteContact(item.id)}
+                    variant="danger"
+                  >
+                    &times;
+                  </Button>
+                </div>
               </div>
             </li>
           </CSSTransition>

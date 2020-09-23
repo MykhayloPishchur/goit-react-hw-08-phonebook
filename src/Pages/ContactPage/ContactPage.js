@@ -6,8 +6,7 @@ import ContactList from "../../Components/ContactList";
 import Filter from "../../Components/Filter";
 import style from "./contactpage.module.css";
 import pop from "../../Transiction/pop.module.css";
-import contactsOperations from "../../Redux/contacts/contacts-operations";
-import contactsSelectors from "../../Redux/contacts/contacts-selectors";
+import { contactsSelectors, contactsOperations } from "../../Redux/contacts";
 import { CSSTransition } from "react-transition-group";
 
 class ContactsView extends Component {
@@ -18,20 +17,22 @@ class ContactsView extends Component {
   render() {
     const { isLoading, contacts } = this.props;
     return (
-      <div className={style.container}>
-        {isLoading && <Loader />}
+      <div className={style.wrapper}>
+        <div className={style.container}>
+          {isLoading && <Loader />}
 
-        <ContactForm />
+          <ContactForm />
 
-        <CSSTransition
-          in={contacts.length > 1}
-          timeout={500}
-          classNames={pop}
-          unmountOnExit
-        >
-          <Filter />
-        </CSSTransition>
-        <ContactList />
+          <CSSTransition
+            in={contacts.length > 1}
+            timeout={500}
+            classNames={pop}
+            unmountOnExit
+          >
+            <Filter />
+          </CSSTransition>
+          <ContactList />
+        </div>
       </div>
     );
   }

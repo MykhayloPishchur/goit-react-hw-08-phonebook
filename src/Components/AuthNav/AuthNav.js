@@ -1,38 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
-const styles = {
-  link: {
-    display: "inline-block",
-    textDecoration: "none",
-    padding: 12,
-    fontWeight: 700,
-    color: "#2A363B",
-  },
-  activeLink: {
-    color: "#E84A5F",
-  },
-};
+import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 const AuthNav = () => (
-  <div>
-    <NavLink
-      to="/register"
-      exact
-      style={styles.link}
-      activeStyle={styles.activeLink}
-    >
-      Register
-    </NavLink>
-    <NavLink
-      to="/login"
-      exact
-      style={styles.link}
-      activeStyle={styles.activeLink}
-    >
+  <Nav>
+    <Nav.Link as={Link} to="/login">
       Login
-    </NavLink>
-  </div>
+    </Nav.Link>
+    <Nav.Link as={Link} to="/register">
+      Register
+    </Nav.Link>
+  </Nav>
 );
+
+AuthNav.propTypes = PropTypes.any.isRequired;
 
 export default AuthNav;

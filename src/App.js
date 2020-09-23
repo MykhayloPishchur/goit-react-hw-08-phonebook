@@ -7,6 +7,7 @@ import Loader from "./Components/Loader";
 import PrivateRoute from "./Common/PrivateRoute";
 import PublicRoute from "./Common/PubblicRoute";
 import authOperations from "./Redux/auth/auth-operations";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   componentDidMount() {

@@ -1,4 +1,4 @@
-import { Form, Button } from "react-bootstrap";
+// import { Form, Button } from "react-bootstrap";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { authOperations } from "../../Redux/auth";
@@ -12,10 +12,6 @@ class LoginPage extends Component {
     email: "",
     password: "",
   };
-
-  // handleChange = ({ name, value }) => {
-  //   this.setState({ [name]: value });
-  // };
 
   handleChange = (e) =>
     this.setState({
@@ -34,34 +30,41 @@ class LoginPage extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className="loginPageContainer">
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-              type="email"
-              placeholder="Enter email"
-            />
-          </Form.Group>
-
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-              type="password"
-              placeholder="Enter Password"
-            />
-          </Form.Group>
-
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
+      <div className="loginConntainer">
+        <div className="login-box">
+          <h2>Login</h2>
+          <form onSubmit={this.handleSubmit}>
+            <div className="user-box">
+              <input
+                name="email"
+                value={email}
+                onChange={this.handleChange}
+                type="email"
+                placeholder="Enter email"
+                autoComplete="off"
+              ></input>
+              <label>Email address</label>
+            </div>
+            <div className="user-box">
+              <input
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+                type="password"
+                placeholder="Enter Password"
+                autoComplete="off"
+              ></input>
+              <label>Password</label>
+            </div>
+            <button type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

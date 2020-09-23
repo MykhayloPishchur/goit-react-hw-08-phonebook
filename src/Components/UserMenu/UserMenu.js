@@ -1,40 +1,30 @@
-/*
- * TODO: Подписаться на name и avatar https://icon-library.net/images/avatar-icon-images/avatar-icon-images-7.jpg
- * TODO: диспатч операцию logout
- */
 import React from "react";
 import { connect } from "react-redux";
 import { authSelectors, authOperations } from "../../Redux/auth";
-
-const styles = {
-  container: {
-    display: "flex",
-    alignItems: "center",
-  },
-  avatar: {
-    marginRight: 4,
-  },
-  name: {
-    fontWeight: 700,
-    marginRight: 12,
-  },
-};
+import { Button } from "react-bootstrap";
+import styles from "./usermenu.module.css";
+import PropTypes from "prop-types";
 
 const UserMenu = ({ avatar, name, onLogout }) => (
-  <div style={styles.container}>
-    <img src={avatar} alt="" width="32" style={styles.avatar} />
-    <span style={styles.name}>Welcome, {name}</span>
-    <button type="button" onClick={onLogout}>
+  <div className={styles.container}>
+    <img src={avatar} alt="" width="32" className={styles.avatar} />
+    <span className={styles.name}>Welcome, {name}</span>
+    <Button variant="outline-info" onClick={onLogout}>
       Logout
-    </button>
+    </Button>
   </div>
 );
 
 const mapStateToProps = (state) => ({
   name: authSelectors.getUsername(state),
-  avatar:
-    "https://icon-library.net/images/avatar-icon-images/avatar-icon-images-7.jpg",
+  avatar: "https://i.ibb.co/xj4hjVH/images.jpg",
 });
+
+UserMenu.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onLogout: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, { onLogout: authOperations.logOut })(
   UserMenu
